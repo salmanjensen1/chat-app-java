@@ -52,8 +52,8 @@ class ChatAppFeatures {
         return userMessages;
     }
 
-    //returns a sorted List of a person with given phone number for the most Exchanged Messages in the MessageList
-    public List<Map.Entry<String, Integer>> createFrequestMessageList(List<Message> messageList, String phoneNumber) {
+    //returns a Map for the most Exchanged Messages in the given Message List of a specific person
+    public Map<String, Integer> createFrequentMessageList(List<Message> messageList, String phoneNumber) {
         Map<String, Integer> messageCountMap = new HashMap<>();
 
         // Count number of messages between each pair
@@ -65,16 +65,16 @@ class ChatAppFeatures {
 //            System.out.println(friend);
             messageCountMap.put(friendNumber, messageCountMap.getOrDefault(friendNumber, 0) + 1); //increment map[friend] by 1
         }
+        return messageCountMap;
 
-        //converting the map to list for sorting
-        List<Map.Entry<String, Integer>> sortedFriends = new ArrayList<>(messageCountMap.entrySet());
-        sortedFriends.sort((e1, e2) -> e2.getValue().compareTo(e1.getValue())); // Sort by value (message count)
-        return sortedFriends;
     }
 
     //given the number of top friends you want to see, iterates a sorted list for most frequent messages exchanged
     public List<User> getTopFriends(List<Message> messageList, String phoneNumber, int numberofTopFriends) {
-        List<Map.Entry<String, Integer>> sortedFriends = createFrequestMessageList(messageList, phoneNumber);
+        //converting the map to list for sorting
+        Map<String, Integer> messageCountMap = createFrequentMessageList(messageList, phoneNumber);
+        List<Map.Entry<String, Integer>> sortedFriends = new ArrayList<>(messageCountMap.entrySet());
+        sortedFriends.sort((e1, e2) -> e2.getValue().compareTo(e1.getValue())); // Sort by value (message count)
 
         // Get the top 10 friends
         List<User> topFriends = new ArrayList<>();
@@ -90,4 +90,6 @@ class ChatAppFeatures {
         return topFriends;
 
     }
+
+
 }

@@ -60,7 +60,9 @@ public class ChatApp {
         List<User> topFriends = chatService.getTopFriends(geraltMessages, geralt.getPhoneNumber(), numberOfTopFriends);
         System.out.println("\nTop Friends of: "+ geralt.getName()+"\n");
         for (int i=1; i<=topFriends.size(); i++) {
-            System.out.println(i+". Name: "+topFriends.get(i-1).getName()+", Phone Number: "+ topFriends.get(i-1).getPhoneNumber());
+            String phone = topFriends.get(i-1).getPhoneNumber();
+            System.out.println(i+". Name: "+topFriends.get(i-1).getName()+", Phone Number: "+ phone);
+//            System.out.println("Message Count: " + chatService.messageCount(geraltMessages,phone));
         }
     }
 
