@@ -1,0 +1,10 @@
+
+’
+java:S1192"JDefine a constant instead of duplicating this literal "I'm good!" 5 times.(ÕÝ“çùÿÿÿÿ8­Üºž 2J$3d0bbe75-8329-4847-b274-2928d6269613
+•
+java:S1192"MDefine a constant instead of duplicating this literal "How are you?" 3 times.(§à´ªþÿÿÿÿ8­Üºž 2J$6f144d8f-e735-46cb-8842-41bd7a683a28
+Š
+java:S1192"GDefine a constant instead of duplicating this literal "Hello!" 4 times.(üÚêƒ8­Üºž 2J$21403c95-b85d-4e9d-b907-72d5f98290fc
+r	java:S106="+Replace this use of System.out by a logger.(ÞÅˆùýÿÿÿÿ8èÜºž 2J$8798dbd1-c19a-4678-85eb-7164c3fc9a2c
+m	java:S106?"+Replace this use of System.out by a logger.(Ý‹€´8èÜºž 2J$d6e78d5f-e216-43ec-8f85-117824b17695
+l	java:S106F"+Replace this use of System.out by a logger.(‡µôA8éÜºž 2J$a1eeab50-f8ed-4908-902d-825fb8819185
